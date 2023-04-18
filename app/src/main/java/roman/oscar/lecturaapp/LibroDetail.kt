@@ -31,14 +31,14 @@ class LibroDetail : AppCompatActivity() {
         var tituloLibro= intent.getStringExtra("titulo")
         var descripcionLibro= intent.getStringExtra("sinopsis")
         var imagenLibro= intent.getIntExtra("image", 0)
-        var paginasLibro= intent.getStringExtra("paginas")
+        var paginasLibro= intent.getIntExtra("paginas", 0)
         var autorLibro = intent.getStringExtra("autor")
 
         titulo.setText(tituloLibro)
         descripcion.setText(descripcionLibro)
         imagen.setImageResource(imagenLibro)
         autor.setText(autorLibro)
-        paginas.setText(paginasLibro)
+        paginas.setText("$paginasLibro páginas")
     }
 
     class CategoriaAdapter(context: Context, categorias: List<String>) : BaseAdapter() {
