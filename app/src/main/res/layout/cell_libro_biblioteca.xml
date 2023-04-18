@@ -10,8 +10,8 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:layout_width="175dp"
-            android:layout_height="193dp"
+            android:layout_width="160dp"
+            android:layout_height="220dp"
             android:layout_gravity="center"
             android:clipToOutline="true"
             android:scaleType="fitXY"
@@ -36,7 +36,7 @@
         android:id="@+id/progressBar_libro_cell"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_marginTop="10dp"
-        android:layout_width="175dp"
+        android:layout_width="160dp"
         android:layout_height="8dp"
         android:layout_gravity="center"
         android:scaleType="fitXY"
@@ -46,7 +46,7 @@
 
     <TextView
         android:id="@+id/titulo_libro_cell"
-        android:layout_width="175dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
