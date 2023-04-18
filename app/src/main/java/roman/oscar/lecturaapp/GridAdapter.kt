@@ -10,7 +10,6 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 
 class GridAdapter(private val context: Context, private val libros: List<Libro>) : BaseAdapter() {
-    private var count = 0
 
     override fun getCount(): Int {
         return libros.size

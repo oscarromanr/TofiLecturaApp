@@ -54,7 +54,7 @@ class inicio : Fragment() {
                 "Click",
                 R.drawable.imagen_libro1,
                 "Kayla Miller",
-                "192 páginas",
+                192,
                 " La historia se centra en un pequeño príncipe que realiza una travesía por el universo. En este viaje descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.",
                 categoriasLibroUno
             )
@@ -64,7 +64,7 @@ class inicio : Fragment() {
                 "Si le das un pastelito a un gato",
                 R.drawable.imagen_libro2,
                 "Laura Numeroff",
-                "32 páginas",
+                32,
                 "Si le das un pastelito a un gato, querrá ponerle confites de colores. Cuando le des los confites, derramará algunos en el piso. Después de limpiar, sentirá calor. Tendrás que darle un traje de baño ... ¡y éste es sólo el comienzo!",
                 categoriasLibroDos
             )
@@ -74,7 +74,7 @@ class inicio : Fragment() {
                 "El chico de la última fila",
                 R.drawable.imagen_libro3,
                 "Onjali Q. Raúf",
-                "300 páginas",
+                300,
                 "La amistad no conoce fronteras. Ahmet acaba de llegar nuevo al colegio y no puede comunicarse con nadie. Después de regalarle muchos caramelos, él y yo nos hemos hecho muy amigos. Es un buen chico.",
                 categoriasLibroTres
             )
@@ -84,7 +84,7 @@ class inicio : Fragment() {
                 "Horse Museum",
                 R.drawable.imagen_libro4,
                 "Dr. Seuss",
-                "80 páginas",
+                80,
                 "Explore how different artists have seen horses, and maybe even find a new way of looking at them yourself.",
                 categoriasLibroCuatro
             )
