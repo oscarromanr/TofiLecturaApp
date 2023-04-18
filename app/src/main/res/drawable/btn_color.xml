@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+<shape android:shape="rectangle">
+        <corners android:radius="10dp"/>
+<gradient android:startColor="#17568E"
+    android:endColor="#3A8CDD"
+    android:type="linear"
+    android:angle="90"/>
+
+</shape>
+</item>
+    <item>
+        <bitmap
+            android:src="@drawable/diamante"
+            android:gravity="center" />
+    </item>
+
+</layer-list>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/my_button"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_age"
+        android:drawableTop="@drawable/ic_icon_sports"
+        android:text="@string/sports"
+        android:textAllCaps="false"
+        android:paddingTop="10dp"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/buttons"
+        android:elevation="5dp"/>
+
+</RelativeLayout>

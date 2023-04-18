@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="52dp"
+    android:background="@drawable/gradient_background"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".FavoriteThemesActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack"
+        android:layout_width="20dp"
+        android:layout_height="34dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_back"
+        android:textSize="24sp"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¡Bienvenido!"
+        android:layout_gravity="left"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/text"
+        android:textSize="@dimen/titles"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Elige tus temas favoritos"
+        android:textSize="@dimen/subtitles"
+        android:layout_gravity="left"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/text" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSports"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/ic_age"
+                    android:drawableTop="@drawable/ic_icon_sports"
+                    android:text="@string/sports"
+                    android:textAllCaps="false"
+                    android:paddingTop="15dp"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/buttons"
+                    android:elevation="5dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAnimals"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/ic_age"
+                    android:drawableTop="@drawable/ic_icon_animals"
+                    android:text="@string/animals"
+                    android:textAllCaps="false"
+                    android:paddingTop="15dp"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/buttons"
+                    android:elevation="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMagic"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/ic_age"
+                    android:drawableTop="@drawable/ic_icon_magic"
+                    android:text="@string/magic"
+                    android:textAllCaps="false"
+                    android:paddingTop="15dp"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/buttons"
+                    android:elevation="5dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnVideogames"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/ic_age"
+                    android:drawableTop="@drawable/ic_icon_videogames"
+                    android:text="@string/videogames"
+                    android:textAllCaps="false"
+                    android:paddingTop="15dp"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/buttons"
+                    android:elevation="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMusic"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/ic_age"
+                    android:drawableTop="@drawable/ic_icon_music"
+                    android:text="@string/music"
+                    android:textAllCaps="false"
+                    android:paddingTop="15dp"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/buttons"
+                    android:elevation="5dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSpace"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/ic_age"
+                    android:drawableTop="@drawable/ic_icon_space"
+                    android:text="@string/videogames"
+                    android:textAllCaps="false"
+                    android:paddingTop="15dp"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/buttons"
+                    android:elevation="5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_background"
+            android:elevation="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReady"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="42dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/btn_login"
+                android:text="@string/ready"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/text"
+                android:textSize="@dimen/buttons"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

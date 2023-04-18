@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#66607E</color>
+    <color name="text">#ECF4FE</color>
+    <color name="yellow">#FFEBA1</color>
+    <color name="purple">#8B82D3</color>
+    <color name="mint">#83CEB3</color>
+    <color name="textfield">#E6E4F0</color>
+    <color name="textview">#7D7C83</color>
+    <color name="black2">#272727</color>
+    <color name="mustard">#FFE252</color>
+    <color name="grisclaro">#9E9E9E</color>
+    <color name="almostblack">#1D1D1D</color>
+    <color name="azulverde">#9BD1AC</color>
+    <color name="cellCategory">#BACEDE</color>
+    <color name="categoryName">#555C62</color>
+
+    <color name="cardSubtitle">#484463</color>
+
+</resources>

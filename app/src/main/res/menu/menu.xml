@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item
+        android:id="@+id/inicio"
+        android:icon="@drawable/inicio"
+        android:iconTint="@color/cardSubtitle"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/buscar"
+        android:icon="@drawable/buscar"
+        android:iconTint="@color/cardSubtitle"
+        android:title="Buscar" />
+
+    <item
+        android:id="@+id/biblioteca"
+        android:icon="@drawable/biblioteca"
+        android:iconTint="@color/cardSubtitle"
+        android:title="Biblioteca" />
+
+    <item
+        android:id="@+id/navigation_actividades"
+        android:icon="@drawable/actividades"
+        android:iconTint="@color/cardSubtitle"
+        android:title="Actividades" />
+
+    <item
+        android:id="@+id/perfilFragment"
+        android:icon="@drawable/perfil"
+        android:iconTint="@color/cardSubtitle"
+        android:title="Perfil" />
+
+</menu>

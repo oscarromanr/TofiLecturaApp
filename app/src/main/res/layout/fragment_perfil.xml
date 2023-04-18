@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilFragment"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_book">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:elevation="8dp"
+        android:background="@drawable/gradient_book">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perfil"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="15dp"
+            android:textSize="30sp"
+            android:textColor="@color/cardSubtitle"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfiguration"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
+            android:layout_gravity="bottom"
+            android:drawableTop="@drawable/configuracionmorado"/>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imagenLibro"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:background="@color/black"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:text="Carla"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-35dp"
+        android:textSize="25sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="130dp"
+        android:layout_height="164dp"
+        android:layout_gravity="center"
+        android:paddingTop="120dp"
+        android:background="@drawable/btn_color2"
+        android:text="Medallas"
+        android:textColor="@color/white"
+        android:layout_marginLeft="-70dp"
+        android:layout_marginTop="80dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="130dp"
+        android:layout_height="164dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="75dp"
+        android:paddingTop="120dp"
+        android:text="Colecionables"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_color"
+        android:layout_marginTop="-164dp"/>
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ConfigurationActivity"
+    android:background="@drawable/gradient_book"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:elevation="8dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBack"
+            android:layout_width="20dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ic_back_purple"
+            android:textSize="24sp"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Configuración"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="15dp"
+            android:textSize="30sp"
+            android:textColor="@color/cardSubtitle"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:elevation="8dp"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_editar"
+            android:layout_width="300dp"
+            android:text="Editar perfil"
+            android:textAllCaps="false"
+            android:elevation="5dp"
+            android:textStyle="bold"
+            android:textSize="@dimen/buttons"
+            android:background="@drawable/btn_conf"
+            android:layout_height="80dp"
+            android:layout_marginVertical="40dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cambiar"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:elevation="5dp"
+            android:text="Cambiar de perfil"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="@dimen/buttons"
+            android:background="@drawable/btn_conf"
+            android:layout_marginHorizontal="50dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_ayuda"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:text="Ayuda"
+            android:elevation="5dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="@dimen/buttons"
+            android:layout_marginVertical="40dp"
+            android:background="@drawable/btn_conf"
+            android:layout_marginHorizontal="50dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cerrar_sesion"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="Cerrar sesión"
+            android:textAllCaps="false"
+            android:textSize="16dp"
+            android:textColor="@color/text"
+            android:layout_marginVertical="40dp"
+            android:background="@drawable/btn_cerrar"
+            android:layout_marginHorizontal="50dp"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+</LinearLayout>

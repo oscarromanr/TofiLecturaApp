@@ -1,0 +1,166 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="72dp"
+    android:background="@drawable/gradient_background"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ConfigureProfileActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack"
+        android:layout_width="20dp"
+        android:layout_height="34dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_back"
+        android:textSize="24sp"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="Configura tu perfil"
+        android:textColor="@color/text"
+        android:textSize="@dimen/titles"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_white"
+        android:elevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLeft"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:background="@drawable/ic_back_purple"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"/>
+
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/img_avatar_uno" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRight"
+                android:layout_width="20dp"
+                android:layout_height="32dp"
+                android:background="@drawable/ic_next_purple"
+                android:layout_marginEnd="24dp"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="18dp"
+        android:paddingLeft="64dp"
+        android:paddingRight="64dp"
+        android:paddingBottom="32dp">
+
+        <!-- Image carousel -->
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:background="@drawable/text_field"
+            android:textColor="@color/text"
+            android:textSize="@dimen/subtitles"
+            android:elevation="5dp"
+            android:padding="20dp" />
+
+        <TextView
+            android:id="@+id/tvTitleAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_gravity="left"
+            android:text="Edad"
+            android:textSize="@dimen/titles"
+            android:textColor="@color/text"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMinus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/ic_yellow_minus"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvAge"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:text="12"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#66607E"
+                android:background="@drawable/ic_age"
+                android:elevation="5dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPlus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textSize="24sp"
+                android:elevation="5dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/ic_yellow_plus"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:textColor="@color/text"
+            android:text="@string/next"
+            android:textSize="@dimen/buttons"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_register"
+            android:layout_marginBottom="32dp"/>
+    </LinearLayout>
+</LinearLayout>
