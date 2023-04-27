@@ -20,7 +20,11 @@ class FavoriteThemesActivity : AppCompatActivity() {
         }
 
         configurarBotones();
-
+        val btnReady = findViewById<Button>(R.id.btnReady)
+        btnReady.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
