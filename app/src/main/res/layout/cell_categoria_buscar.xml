@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    android:background="@drawable/gradient_white_cell"
+    android:elevation="8dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="150dp"
+        android:layout_height="125dp"
+        android:clipToOutline="true"
+        android:scaleType="fitXY"
+        android:id="@+id/image_libro_cell"
+        android:src="@drawable/imagen_libro1"
+        android:background="@drawable/imagen_categoria_buscar"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Fantasía"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>
+

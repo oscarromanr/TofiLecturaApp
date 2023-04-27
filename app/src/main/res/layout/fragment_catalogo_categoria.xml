@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CategoriaLibros">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre categoria"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:textSize="30sp"
+            android:id="@+id/nombre_categoria"/>
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/libros_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:layout_marginTop="10dp"
+        android:verticalSpacing="20dp"
+        android:numColumns="2"
+        android:paddingHorizontal="10dp"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        />
+
+
+</LinearLayout>

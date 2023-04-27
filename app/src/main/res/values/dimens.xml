@@ -2,6 +2,8 @@
 <resources>
     <dimen name="buttons">20sp</dimen>
     <dimen name="titles">24sp</dimen>
+    <dimen name="titlesNew">26sp</dimen>
     <dimen name="subtitles">20sp</dimen>
     <dimen name="text">16sp</dimen>
+    <dimen name="buttonsLogin">22sp</dimen>
 </resources>

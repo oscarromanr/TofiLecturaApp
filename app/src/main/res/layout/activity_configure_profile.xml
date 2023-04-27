@@ -27,7 +27,7 @@
         android:paddingRight="40dp"
         android:text="Configura tu perfil"
         android:textColor="@color/text"
-        android:textSize="@dimen/titles"
+        android:textSize="@dimen/titlesNew"
         android:textStyle="bold"
         android:layout_marginBottom="24dp" />
 

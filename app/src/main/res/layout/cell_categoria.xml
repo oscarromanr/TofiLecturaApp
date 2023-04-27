@@ -15,6 +15,6 @@
         android:text="Fantasia"
         android:textAllCaps="false"
         android:textColor="@color/categoryName"
-        android:textSize="14dp" />
+        android:textSize="16dp" />
 
 </LinearLayout>

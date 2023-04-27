@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:clipToOutline="true"
+            android:scaleType="fitXY"
+            android:id="@+id/image_libro_cell"
+            android:src="@drawable/imagen_libro1"
+            android:background="@drawable/imagen_catalogo"/>
+
+        <ImageView
+            android:id="@+id/checked_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:src="@drawable/checksquare"
+            android:visibility="invisible"/>
+
+    </FrameLayout>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar_libro_cell"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_marginTop="10dp"
+        android:layout_width="160dp"
+        android:layout_height="8dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:progress="60"
+        android:progressDrawable="@drawable/progressbar_purple"
+        />
+
+    <TextView
+        android:id="@+id/titulo_libro_cell"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Click" />
+
+
+</LinearLayout>

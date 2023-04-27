@@ -29,7 +29,7 @@
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
         android:textColor="@color/text"
-        android:textSize="@dimen/titles"
+        android:textSize="@dimen/titlesNew"
         android:textStyle="bold"
         />
 
@@ -130,7 +130,7 @@
             android:layout_height="72dp"
             android:textColor="@color/text"
             android:text="@string/register"
-            android:textSize="@dimen/buttons"
+            android:textSize="@dimen/buttonsLogin"
             android:textStyle="bold"
             android:textAllCaps="false"
             android:layout_marginTop="16dp"

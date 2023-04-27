@@ -4,29 +4,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".biblioteca"
+    android:background="@drawable/gradient_book"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="@color/moradoclaro"
+        android:visibility="invisible"
+        android:id="@+id/opciones"
+        android:elevation="10dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/cerrar"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/opcion_cerrar"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/borrar"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="290dp"
+            android:id="@+id/opcion_borrar"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="-90dp"
+        android:orientation="horizontal"
+        android:elevation="8dp"
+        android:background="@drawable/gradient_book">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAllCaps="true"
             android:text="Biblioteca"
-            android:fontFamily="sans-serif-condensed"
+            android:textAllCaps="false"
             android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
-            android:textSize="30sp" />
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="15dp"
+            android:textSize="30sp"
+            android:textColor="@color/cardSubtitle"/>
     </LinearLayout>
 
     <GridView
         android:id="@+id/libros_biblioteca"
         android:layout_width="match_parent"
         android:layout_height="540dp"
-        android:layout_marginTop="10dp"
+        android:verticalSpacing="30dp"
+        android:layout_marginTop="30dp"
         android:numColumns="2"
         android:paddingHorizontal="10dp" />
 
