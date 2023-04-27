@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "524581017325",
+    "project_id": "tofi-4a04c",
+    "storage_bucket": "tofi-4a04c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524581017325:android:dae009ae8d125eb2535ee4",
+        "android_client_info": {
+          "package_name": "roman.oscar.lecturaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524581017325-2tio9071u797fdf782qhtqhroamn2qo8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "roman.oscar.lecturaapp",
+            "certificate_hash": "23e1ede68c5e89c538e0811846abee054ff36953"
+          }
+        },
+        {
+          "client_id": "524581017325-mdvrc635h8juio6vtk5ioga9f3rkh91s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTbQDePiWtm4R3bcWuPIYr2aOTYzyXCR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524581017325-mdvrc635h8juio6vtk5ioga9f3rkh91s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
