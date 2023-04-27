@@ -23,8 +23,9 @@
     <color name="cellCategory">#BACEDE</color>
     <color name="categoryName">#555C62</color>
 
+    <color name="goldSelected">#715F20</color>
     <color name="cardSubtitle">#484463</color>
-
+    <color name="drawableSelected">#A78E32</color>
     <color name="moradoclaro">#8980d0</color>
 
 </resources>

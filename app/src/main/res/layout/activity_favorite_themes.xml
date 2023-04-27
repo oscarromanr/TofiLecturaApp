@@ -154,7 +154,7 @@
                     android:layout_margin="8dp"
                     android:background="@drawable/ic_age"
                     android:drawableTop="@drawable/ic_icon_space"
-                    android:text="@string/videogames"
+                    android:text="@string/space"
                     android:textAllCaps="false"
                     android:paddingTop="15dp"
                     android:textColor="@color/primary"
