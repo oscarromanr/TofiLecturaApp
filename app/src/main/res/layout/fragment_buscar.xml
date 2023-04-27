@@ -22,8 +22,8 @@
             android:textStyle="bold"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="15dp"
-            android:textSize="30sp"
+            android:layout_marginBottom="5dp"
+            android:textSize="28sp"
             android:textColor="@color/cardSubtitle"/>
 
         <EditText
@@ -32,11 +32,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginBottom="20dp"
-            android:ems="16"
+            android:ems="14"
             android:inputType="textFilter"
-            android:text="Buscar historias, autores, categorías.."
+            android:background="@drawable/text_field"
+            android:paddingLeft="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingRight="8dp"
+            android:hint="Buscar historias, autores, categorías..."
+            android:drawableLeft="@drawable/ic_icon_magnifying_glass"
+            android:drawablePadding="12dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColorHint="#7D7C83"
+            android:textColor="@color/cardSubtitle"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp" />
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
     </LinearLayout>
 
@@ -57,16 +69,16 @@
             android:textColor="@color/black"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="25dp"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
         <GridView
             android:id="@+id/categorias_lista"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:numColumns="1"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
+            android:numColumns="1"
             android:paddingHorizontal="10dp" />
 
     </LinearLayout>

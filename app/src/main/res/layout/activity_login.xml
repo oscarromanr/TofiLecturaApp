@@ -97,7 +97,7 @@
         android:textStyle="bold"
         android:textAllCaps="false"
         android:textColor="@color/text"
-        android:textSize="@dimen/buttons" />
+        android:textSize="@dimen/buttonsLogin" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegister"
@@ -105,7 +105,7 @@
         android:layout_height="80dp"
         android:textColor="@color/text"
         android:text="@string/register"
-        android:textSize="@dimen/buttons"
+        android:textSize="@dimen/buttonsLogin"
         android:textStyle="bold"
         android:textAllCaps="false"
         android:layout_marginTop="16dp"

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".PerfilFragment"
     android:orientation="vertical"
+    android:gravity="center"
     android:background="@drawable/gradient_book">
 
     <LinearLayout
@@ -44,46 +45,56 @@
     </LinearLayout>
 
 
-    <ImageView
-        android:id="@+id/imagenLibro"
-        android:layout_width="230dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"
-        android:background="@color/black"
-        android:scaleType="fitXY" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="true"
+    <androidx.appcompat.widget.AppCompatButton
+        android:textAllCaps="false"
+        android:layout_width="240dp"
+        android:layout_height="278dp"
+        android:layout_marginTop="45dp"
+        android:paddingTop="8dp"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/avatarprofile"
+        android:background="@drawable/gradient_btn_profile"
         android:text="Carla"
+        android:textStyle="bold"
+        android:textSize="28sp"
         android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="-35dp"
-        android:textSize="25sp" />
+        android:elevation="15dp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="130dp"
-        android:layout_height="164dp"
-        android:layout_gravity="center"
-        android:paddingTop="120dp"
-        android:background="@drawable/btn_color2"
-        android:text="Medallas"
-        android:textColor="@color/white"
-        android:layout_marginLeft="-70dp"
-        android:layout_marginTop="80dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-60dp"
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="130dp"
-        android:layout_height="164dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="75dp"
-        android:paddingTop="120dp"
-        android:text="Colecionables"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_color"
-        android:layout_marginTop="-164dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:textAllCaps="false"
+            android:layout_width="160dp"
+            android:layout_height="202dp"
+            android:paddingTop="42dp"
+            android:drawableTop="@drawable/medallas"
+            android:drawablePadding="25dp"
+            android:background="@drawable/gradient_btn_medals"
+            android:text="Medallas"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:textColor="@color/white"
+            android:elevation="15dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:textAllCaps="false"
+            android:layout_marginLeft="25dp"
+            android:layout_width="160dp"
+            android:layout_height="202dp"
+            android:paddingTop="50dp"
+            android:drawableTop="@drawable/diamante"
+            android:drawablePadding="30dp"
+            android:background="@drawable/gradient_btn_collectables"
+            android:text="Coleccionables"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:textColor="@color/white"
+            android:elevation="15dp"/>
+    </LinearLayout>
 
 </LinearLayout>

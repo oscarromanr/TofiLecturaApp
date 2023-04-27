@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/border">
+    android:layout_height="125dp"
+    android:background="@drawable/gradient_white_cell"
+    android:elevation="8dp">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="150dp"
         android:layout_height="125dp"
         android:clipToOutline="true"
@@ -14,15 +15,14 @@
         android:src="@drawable/imagen_libro1"
         android:background="@drawable/imagen_categoria_buscar"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:fontFamily="sans-serif-condensed"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="categoria de ejemplo"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:textSize="20sp"/>
+        android:text="Fantasía"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
 </LinearLayout>
 
