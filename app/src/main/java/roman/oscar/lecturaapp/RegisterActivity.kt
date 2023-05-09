@@ -1,11 +1,14 @@
 package roman.oscar.lecturaapp
 
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -26,23 +29,56 @@ class RegisterActivity : AppCompatActivity() {
         val btnRegister = findViewById<Button>(R.id.btnRegister)
 
 
-        btnRegister.setOnClickListener {
-            val mEmail = binding.etEmail.text.toString()
-            val mPassword = binding.etPassword.text.toString()
-            when {
-                mEmail.isEmpty() || mPassword.isEmpty() -> {
-                    Toast.makeText(
-                        baseContext, "Llene todos los campos antes de continuar.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                else -> {
-                    registerUser(mEmail, mPassword)
-                    val intent = Intent(this, ConfigureProfileActivity::class.java)
-                    startActivity(intent)
-                }
-            }
 
+
+        btnRegister.setOnClickListener {
+
+            val etUser = findViewById<EditText>(R.id.etUser)
+            val etEmail = findViewById<EditText>(R.id.etEmail)
+            val etPassword = findViewById<EditText>(R.id.etPassword)
+            val etConfirm = findViewById<EditText>(R.id.etConfirm)
+
+            var mUser = etUser.text.toString()
+            var mEmail = etEmail.text.toString()
+            var mPassword = etPassword.text.toString()
+            var mConfirm = etConfirm.text.toString()
+
+            if (mUser.isEmpty()) {
+                etUser.error = "Ingrese su usuario"
+                etUser.requestFocus()
+            } else if (!mUser.matches("^[a-zA-Z0-9]*$".toRegex())) {
+                etUser.error = "El usuario no debe contener caracteres especiales"
+                etUser.requestFocus()
+            } else if (mEmail.isEmpty()) {
+                etEmail.error = "Ingrese su correo electrónico"
+                etEmail.requestFocus()
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
+                etEmail.error = "El correo ingresado es inválido"
+                etEmail.requestFocus()
+            } else if (mPassword.isEmpty()) {
+                etPassword.error = "Ingrese su contraseña"
+                etPassword.requestFocus()
+            } else if (mPassword.length < 6) {
+                etPassword.error = "La contraseña debe ser de al menos 6 caracteres"
+                etPassword.requestFocus()
+            } else if (mConfirm.isEmpty()) {
+                etConfirm.error = "Confirme su contraseña"
+                etConfirm.requestFocus()
+            } else if (!mPassword.equals(mConfirm)){
+                etConfirm.error = "Las contraseñas deben coincidir"
+                etConfirm.requestFocus()
+            } else {
+
+                val sharedPreferences = getSharedPreferences("infoUsuario", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("username", mUser)
+                editor.putString("email", mEmail)
+                editor.putString("password", mPassword)
+                editor.apply()
+
+                val intent = Intent(this, ConfigureProfileActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         val btnBack = findViewById<Button>(R.id.btnBack)
@@ -73,6 +109,29 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
+    //override fun onResume() {
+    //super.onResume()
+    //val sharedPreferences = getSharedPreferences("infoUsuario", Context.MODE_PRIVATE)
 
+    //val user = sharedPreferences.getString("user", "")
+    //val email = sharedPreferences.getString("email", "")
+    //val password = sharedPreferences.getString("password", "")
+
+    //val etUser = findViewById<EditText>(R.id.etUser)
+    //val etEmail = findViewById<EditText>(R.id.etEmail)
+    //val etPassword = findViewById<EditText>(R.id.etPassword)
+    //val etConfirm = findViewById<EditText>(R.id.etConfirm)
+
+    //etUser.setText(user)
+    //etEmail.setText(email)
+    //etPassword.setText(password)
+    //etConfirm.setText(password)
+    //}
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val sharedPreferences = getSharedPreferences("infoUsuario", Context.MODE_PRIVATE)
+        sharedPreferences.edit().clear().apply()
+    }
 
 }

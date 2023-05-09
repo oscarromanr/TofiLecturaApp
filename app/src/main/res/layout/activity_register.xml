@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
             android:background="@drawable/text_field"
             android:textColor="@color/black"
             android:textSize="@dimen/buttons"

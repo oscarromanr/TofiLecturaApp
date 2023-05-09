@@ -8,6 +8,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -21,7 +23,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        FirebaseApp.initializeApp(this)
         auth = Firebase.auth
+
         binding.btnLogin.setOnClickListener {
             val mEmail = binding.etUser.text.toString()
             val mPassword = binding.etPassword.text.toString()
@@ -48,6 +53,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun SignIn(email: String, password: String) {
+
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -65,6 +71,8 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
     }
+
+
 
     private fun reload() {
         val intent = Intent(this, MainActivity::class.java)
