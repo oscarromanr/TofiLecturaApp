@@ -46,6 +46,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editarPerfil"
         android:textAllCaps="false"
         android:layout_width="240dp"
         android:layout_height="278dp"
@@ -54,7 +55,7 @@
         android:drawablePadding="10dp"
         android:drawableTop="@drawable/avatarprofile"
         android:background="@drawable/gradient_btn_profile"
-        android:text="Carla"
+        android:text=""
         android:textStyle="bold"
         android:textSize="28sp"
         android:textColor="@color/white"
