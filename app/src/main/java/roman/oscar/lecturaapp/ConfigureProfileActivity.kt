@@ -22,7 +22,7 @@ class ConfigureProfileActivity : AppCompatActivity() {
         var btnMinus = findViewById<Button>(R.id.btnMinus)
         var mAge = 12
         var indiceImg = 0
-        val imageResources = intArrayOf(roman.oscar.lecturaapp.R.drawable.img_avatar_uno, roman.oscar.lecturaapp.R.drawable.avatarprofile, roman.oscar.lecturaapp.R.drawable.imagen_libro1)
+        val imageResources = intArrayOf(roman.oscar.lecturaapp.R.drawable.img_avatar_uno, roman.oscar.lecturaapp.R.drawable.avatarprofile)
 
         imgAvatar = findViewById(R.id.imgAvatar);
         rightButton = findViewById(R.id.btnRight);

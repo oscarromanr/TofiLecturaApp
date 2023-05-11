@@ -3,14 +3,15 @@ package roman.oscar.lecturaapp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AbsListView
 import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
+import com.google.firebase.database.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +22,8 @@ class inicio : Fragment() {
     private var currentState: Bundle? = null
     private var adapter: LibroAdapter? = null
     private var libros = ArrayList<Libro>()
+    private var librosCargados = false
+    private var adapter2: GridAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,60 +38,44 @@ class inicio : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_inicio, container, false)
         val gridLibros: GridView = view.findViewById(R.id.libros_catalog)
-        cargarLibros()
-        val adapter = GridAdapter(requireContext(), libros)
+        adapter2 = GridAdapter(requireContext(), libros)
         // Establece el adaptador en el GridView
-        gridLibros.adapter = adapter
+        gridLibros.adapter = adapter2
         return view
     }
 
     private fun cargarLibros() {
-        val categoriasLibroUno = arrayListOf("Ficción", "Popular", "Amistad","Novela","Arte","Escolar")
-        val categoriasLibroDos = arrayListOf("Animales", "Belleza", "Socialismo","Fascismo","Comunismo","Google Chrome")
-        val categoriasLibroTres = arrayListOf("Felicidad", "Escolar", "Amistad","Aprendizaje","Popular","Comedia")
-        val categoriasLibroCuatro = arrayListOf("Comedia", "Popular", "Naturaleza","Aprendizaje","Actividad","Arte")
-
-        libros.clear()
-        libros.add(
-            Libro(
-                "Click",
-                R.drawable.imagen_libro1,
-                "Kayla Miller",
-                192,
-                " La historia se centra en un pequeño príncipe que realiza una travesía por el universo. En este viaje descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.",
-                categoriasLibroUno
-            )
-        )
-        libros.add(
-            Libro(
-                "Si le das un pastelito a un gato",
-                R.drawable.imagen_libro2,
-                "Laura Numeroff",
-                32,
-                "Si le das un pastelito a un gato, querrá ponerle confites de colores. Cuando le des los confites, derramará algunos en el piso. Después de limpiar, sentirá calor. Tendrás que darle un traje de baño ... ¡y éste es sólo el comienzo!",
-                categoriasLibroDos
-            )
-        )
-        libros.add(
-            Libro(
-                "El chico de la última fila",
-                R.drawable.imagen_libro3,
-                "Onjali Q. Raúf",
-                300,
-                "La amistad no conoce fronteras. Ahmet acaba de llegar nuevo al colegio y no puede comunicarse con nadie. Después de regalarle muchos caramelos, él y yo nos hemos hecho muy amigos. Es un buen chico.",
-                categoriasLibroTres
-            )
-        )
-        libros.add(
-            Libro(
-                "Horse Museum",
-                R.drawable.imagen_libro4,
-                "Dr. Seuss",
-                80,
-                "Explore how different artists have seen horses, and maybe even find a new way of looking at them yourself.",
-                categoriasLibroCuatro
-            )
-        )
+        if (librosCargados) {
+            // Los libros ya han sido cargados previamente, no es necesario cargarlos nuevamente
+            return
+        }
+        val database = FirebaseDatabase.getInstance().reference
+        val librosRef = database.child("libro")
+        librosRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                libros.clear()
+                for (libroSnapshot in dataSnapshot.children) {
+                    val autor = libroSnapshot.child("autor").getValue(String::class.java) ?: ""
+                    val categoriasList = libroSnapshot.child("categorias")
+                        .getValue(object : GenericTypeIndicator<List<String>>() {})
+                        ?: emptyList()
+                    val image = libroSnapshot.child("image").getValue(String::class.java) ?: ""
+                    val paginas = libroSnapshot.child("paginas").getValue(Int::class.java) ?: 0
+                    val sinopsis = libroSnapshot.child("sinopsis").getValue(String::class.java) ?: ""
+                    val titulo = libroSnapshot.child("titulo").getValue(String::class.java) ?: ""
+                    val resId = resources.getIdentifier(image, "drawable", context?.packageName)
+                    val libro = Libro(
+                        titulo, resId, autor, paginas, sinopsis,
+                        categoriasList as ArrayList<String>
+                    )
+                    libros.add(libro)
+                }
+                librosCargados = true
+                adapter2?.notifyDataSetChanged()
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
+        })
     }
 
     class LibroAdapter(context: Context, libros: ArrayList<Libro>) : BaseAdapter() {
@@ -128,5 +115,4 @@ class inicio : Fragment() {
             return view
         }
     }
-
 }
