@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.AuthCredential
@@ -26,6 +27,12 @@ class LoginActivity : AppCompatActivity() {
 
         FirebaseApp.initializeApp(this)
         auth = Firebase.auth
+
+        val tvForgotPass = findViewById<TextView>(R.id.tvForgotPass)
+        tvForgotPass.setOnClickListener {
+            val intent = Intent(this, ForgotPassword::class.java)
+            startActivity(intent)
+        }
 
         binding.btnLogin.setOnClickListener {
             val mEmail = binding.etUser.text.toString()
