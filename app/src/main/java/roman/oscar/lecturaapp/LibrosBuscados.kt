@@ -1,8 +1,10 @@
 package roman.oscar.lecturaapp
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.GridView
 import com.google.firebase.database.*
 
@@ -19,6 +21,13 @@ class LibrosBuscados : AppCompatActivity() {
         adapter2 = GridAdapter(this, libros)
         gridCategorias.adapter = adapter2
         buscar(textoBuscado)
+
+        val btnBack = findViewById<Button>(R.id.btnBack)
+
+        btnBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun buscar(textoBuscado: String?)
