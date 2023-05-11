@@ -3,13 +3,19 @@ package roman.oscar.lecturaapp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.BaseAdapter
+import android.widget.EditText
 import android.widget.GridView
 import android.widget.ImageView
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,6 +48,19 @@ class Buscar : Fragment() {
         cargarCategorias()
         adapter = CategoriaAdapter(requireContext(), categorias)
         gridCategorias.adapter = adapter
+        val editTextBuscar: EditText = view.findViewById(R.id.editTextBuscar)
+        editTextBuscar.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                // Realiza alguna acción aquí cuando se presiona "Enter"
+                Log.d("EditText", "El usuario busco algo")
+                val intento = Intent(context, LibrosBuscados::class.java)
+                intento.putExtra("buscado", editTextBuscar.text.toString())
+                context?.startActivity(intento)
+                true
+            } else {
+                false
+            }
+        }
         return view
     }
 
