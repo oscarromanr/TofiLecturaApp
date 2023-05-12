@@ -71,7 +71,7 @@ class Buscar : Fragment() {
         libros1.add(
             Libro(
                 "Click",
-                R.drawable.imagen_libro1,
+                "https://i.imgur.com/Ij6RZyf.jpg",
                 "Kayla Miller",
                 192,
                 " La historia se centra en un pequeño príncipe que realiza una travesía por el universo. En este viaje descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.",
@@ -81,7 +81,7 @@ class Buscar : Fragment() {
         libros1.add(
             Libro(
                 "El principito",
-                R.drawable.ic_android_black_24dp,
+                "https://imagessl2.casadellibro.com/a/l/t5/92/9788419087492.jpg",
                 "Antoine de Saint-Exupéry",
                 300,
                 " La historia se centra en un pequeño príncipe que realiza una travesía por el universo. En este viaje descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.",
@@ -91,7 +91,7 @@ class Buscar : Fragment() {
         libros1.add(
             Libro(
                 "El pibe motosierra",
-                R.drawable.ic_android_black_24dp,
+                "https://m.media-amazon.com/images/I/81zijlool9L.jpg",
                 "Un chico japones",
                 145,
                 " La historia trata sobre un pibe que de repente se puede transformar en motosierra.",

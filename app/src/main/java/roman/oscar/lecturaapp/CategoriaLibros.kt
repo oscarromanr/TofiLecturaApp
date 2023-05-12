@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.squareup.picasso.Picasso
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -64,7 +65,8 @@ class CategoriaLibros : AppCompatActivity() {
             val inflater = LayoutInflater.from(mContext)
             val view = inflater.inflate(R.layout.cell_libro, null)
             val image: ImageView = view.findViewById(R.id.image_libro_cell)
-            image.setImageResource(libro.image)
+
+            Picasso.get().load(libro.image).into(image)
             image.setOnClickListener {
                 val intento = Intent(mContext, LibroDetail::class.java)
                 intento.putExtra("titulo", libro.titulo)

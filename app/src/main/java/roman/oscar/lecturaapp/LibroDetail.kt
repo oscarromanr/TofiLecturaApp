@@ -15,6 +15,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
 import roman.oscar.lecturaapp.databinding.ActivityLibroDetailBinding
 
 class LibroDetail : AppCompatActivity() {
@@ -38,6 +39,7 @@ class LibroDetail : AppCompatActivity() {
         val listaRecibida: List<String> = intent.getStringArrayListExtra("categorias")?.toList() ?: emptyList()
         val adapter = CategoriaAdapter(this, listaRecibida)
         gridCategorias.adapter = adapter
+
     }
 
     fun cargarDescripcion(){
@@ -50,13 +52,15 @@ class LibroDetail : AppCompatActivity() {
         intent.getStringExtra("titulo")
         var tituloLibro= intent.getStringExtra("titulo")
         var descripcionLibro= intent.getStringExtra("sinopsis")
-        var imagenLibro= intent.getIntExtra("image", 0)
+        var imagenLibro= intent.getStringExtra("image")
         var paginasLibro= intent.getIntExtra("paginas", 0)
         var autorLibro = intent.getStringExtra("autor")
 
         titulo.setText(tituloLibro)
         descripcion.setText(descripcionLibro)
-        imagen.setImageResource(imagenLibro)
+
+        Picasso.get().load(imagenLibro).into(imagen)
+
         autor.setText(autorLibro)
         paginas.setText("$paginasLibro páginas")
     }

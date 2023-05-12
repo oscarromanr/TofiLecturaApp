@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".LibroDetail">
 
+
     <ImageView
         android:id="@+id/ivBookImage"
         android:layout_width="match_parent"

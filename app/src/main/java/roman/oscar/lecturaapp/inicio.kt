@@ -12,6 +12,7 @@ import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
 import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -63,9 +64,8 @@ class inicio : Fragment() {
                     val paginas = libroSnapshot.child("paginas").getValue(Int::class.java) ?: 0
                     val sinopsis = libroSnapshot.child("sinopsis").getValue(String::class.java) ?: ""
                     val titulo = libroSnapshot.child("titulo").getValue(String::class.java) ?: ""
-                    val resId = resources.getIdentifier(image, "drawable", context?.packageName)
                     val libro = Libro(
-                        titulo, resId, autor, paginas, sinopsis,
+                        titulo, image, autor, paginas, sinopsis,
                         categoriasList as ArrayList<String>
                     )
                     libros.add(libro)
@@ -100,8 +100,8 @@ class inicio : Fragment() {
             val view = inflater.inflate(R.layout.cell_libro, null)
             val image: ImageView = view.findViewById(R.id.image_libro_cell)
 
+            Picasso.get().load(libro.image).into(image)
 
-            image.setImageResource(libro.image)
             image.setOnClickListener {
                 val intento = Intent(context, LibroDetail::class.java)
                 intento.putExtra("titulo", libro.titulo)

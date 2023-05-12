@@ -49,9 +49,8 @@ class LibrosBuscados : AppCompatActivity() {
                     val paginas = libroSnapshot.child("paginas").getValue(Int::class.java) ?: 0
                     val sinopsis = libroSnapshot.child("sinopsis").getValue(String::class.java) ?: ""
                     val titulo = libroSnapshot.child("titulo").getValue(String::class.java) ?: ""
-                    val resId = resources.getIdentifier(image, "drawable", packageName)
                     val libro = Libro(
-                        titulo, resId, autor, paginas, sinopsis,
+                        titulo, image, autor, paginas, sinopsis,
                         categoriasList as ArrayList<String>
                     )
                     libros.add(libro)
@@ -74,9 +73,8 @@ class LibrosBuscados : AppCompatActivity() {
                     val paginas = libroSnapshot.child("paginas").getValue(Int::class.java) ?: 0
                     val sinopsis = libroSnapshot.child("sinopsis").getValue(String::class.java) ?: ""
                     val titulo = libroSnapshot.child("titulo").getValue(String::class.java) ?: ""
-                    val resId = resources.getIdentifier(image, "drawable", packageName)
                     val libro = Libro(
-                        titulo, resId, autor, paginas, sinopsis,
+                        titulo, image, autor, paginas, sinopsis,
                         categoriasList as ArrayList<String>
                     )
                     libros.add(libro)

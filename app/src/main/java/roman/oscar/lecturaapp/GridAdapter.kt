@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.BaseAdapter
 import android.widget.ImageView
+import com.squareup.picasso.Picasso
 
 class GridAdapter(private val context: Context, private val libros: List<Libro>) : BaseAdapter() {
 
@@ -33,7 +34,8 @@ class GridAdapter(private val context: Context, private val libros: List<Libro>)
         val marginTop = if (position% 2 == 0) 150 else 0
         layoutParams.setMargins(0, marginTop, 0, 0)
 
-        image.setImageResource(libro.image)
+        Picasso.get().load(libro.image).into(image)
+
         image.setOnClickListener {
             val intento = Intent(context, LibroDetail::class.java)
             intento.putExtra("titulo", libro.titulo)

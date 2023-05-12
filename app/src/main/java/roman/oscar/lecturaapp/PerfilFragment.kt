@@ -78,8 +78,10 @@ class PerfilFragment : Fragment() {
             }
     }
 
-
     private fun obtenerDatosUsuario(nameUser: AppCompatButton?) {
+        if (!isAdded()) {
+            return
+        }
         val uid = FirebaseAuth.getInstance().currentUser?.uid
         val database = FirebaseDatabase.getInstance().reference
         val userRef = database.child("users").child(uid.toString())
@@ -88,7 +90,7 @@ class PerfilFragment : Fragment() {
                 if (dataSnapshot.exists()) {
                     val name = dataSnapshot.child("name").getValue(String::class.java)
                     val imageName = dataSnapshot.child("imageName").getValue(String::class.java)
-                    val resId = resources.getIdentifier(imageName, "drawable", context?.packageName)
+                    val resId = resources.getIdentifier(imageName, "drawable", requireContext().packageName)
                     nameUser?.setCompoundDrawablesWithIntrinsicBounds(0, resId, 0, 0)
                     Log.d("PerfilFragment", "Nombre del usuario: $name")
                     nameUser?.text = name

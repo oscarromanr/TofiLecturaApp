@@ -15,6 +15,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import com.squareup.picasso.Picasso
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,7 +53,7 @@ class biblioteca : Fragment() {
         libros.add(
             Libro(
                 "Click",
-                R.drawable.imagen_libro1,
+                "https://i.imgur.com/Ij6RZyf.jpg",
                 "Kayla Miller",
                 192,
                 " La historia se centra en un pequeño príncipe que realiza una travesía por el universo. En este viaje descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.",
@@ -62,7 +63,7 @@ class biblioteca : Fragment() {
         libros.add(
             Libro(
                 "El principito",
-                R.drawable.ic_android_black_24dp,
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/El_principito.jpg/640px-El_principito.jpg",
                 "Antoine de Saint-Exupéry",
                 300,
                 " La historia se centra en un pequeño príncipe que realiza una travesía por el universo. En este viaje descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.",
@@ -97,7 +98,7 @@ class biblioteca : Fragment() {
             val image: ImageView = view.findViewById(R.id.image_libro_cell)
             val texto: TextView = view.findViewById(R.id.titulo_libro_cell)
             texto.setText(libro.titulo)
-            image.setImageResource(libro.image)
+            Picasso.get().load(libro.image).into(image)
             image.setOnClickListener {
                 val colorMatrix = ColorMatrix(floatArrayOf(
                     0.5f, 0f, 0f, 0f, 0f,
