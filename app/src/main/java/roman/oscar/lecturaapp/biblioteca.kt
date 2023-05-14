@@ -170,7 +170,7 @@ class biblioteca : Fragment() {
             val checked_image: ImageView = view.findViewById(R.id.checked_image)
             texto.text = libro.titulo
             Picasso.get().load(libro.image).into(image)
-            val originalColorFilter = image.drawable.colorFilter
+
             val colorMatrix = ColorMatrix(floatArrayOf(
                 0.5f, 0f, 0f, 0f, 0f,
                 0f, 0.5f, 0f, 0f, 0f,
@@ -185,7 +185,7 @@ class biblioteca : Fragment() {
                     layoutOpciones.visibility = View.VISIBLE
                     selectedItems.add(libro)
                 } else {
-                    image.drawable.colorFilter = originalColorFilter
+
                     checked_image.visibility = View.GONE
                     selectedItems.remove(libro)
                 }
@@ -198,7 +198,7 @@ class biblioteca : Fragment() {
                 checked_image.visibility = View.VISIBLE
                 layoutOpciones.visibility = View.VISIBLE
             } else {
-                image.drawable.colorFilter = originalColorFilter
+
                 checked_image.visibility = View.GONE
             }
 
