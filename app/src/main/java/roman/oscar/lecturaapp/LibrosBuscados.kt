@@ -21,7 +21,9 @@ class LibrosBuscados : AppCompatActivity() {
         adapter2 = GridAdapter(this, libros)
         gridCategorias.adapter = adapter2
         buscar(textoBuscado)
-
+        if (textoBuscado != null) {
+            cargarCategorias(textoBuscado)
+        }
         val btnBack = findViewById<Button>(R.id.btnBack)
 
         btnBack.setOnClickListener {
@@ -85,7 +87,25 @@ class LibrosBuscados : AppCompatActivity() {
             override fun onCancelled(databaseError: DatabaseError) {
             }
         })
-
     }
+    private fun cargarCategorias(nombreCategoria: String) {
+        val database = FirebaseDatabase.getInstance().reference.child("libro")
 
+        database.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                snapshot.children.forEach { libroSnapshot ->
+                    val libro = libroSnapshot.getValue(Libro::class.java)
+                    libro?.let {
+                        if (it.categorias.contains(nombreCategoria)) {
+                            libros.add(it)
+                        }
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+    }
 }
