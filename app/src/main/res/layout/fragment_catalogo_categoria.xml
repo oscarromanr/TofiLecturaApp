@@ -4,36 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CategoriaLibros">
+    tools:context=".CategoriaLibros"
+    android:background="@drawable/gradient_book">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:elevation="8dp"
+        android:background="@drawable/gradient_book">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nombre categoria"
-            android:fontFamily="sans-serif-condensed"
+            android:textAllCaps="false"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="25dp"
             android:textSize="30sp"
-            android:id="@+id/nombre_categoria"/>
+            android:id="@+id/nombre_categoria"
+            android:textColor="@color/cardSubtitle"/>
     </LinearLayout>
 
     <GridView
         android:id="@+id/libros_categoria"
         android:layout_width="match_parent"
-        android:layout_height="570dp"
-        android:layout_marginTop="10dp"
-        android:verticalSpacing="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:clipToPadding="false"
         android:numColumns="2"
         android:paddingHorizontal="10dp"
-        android:clipToPadding="false"
         android:paddingBottom="100dp"
-        />
-
+        android:verticalSpacing="20dp" />
 
 </LinearLayout>
