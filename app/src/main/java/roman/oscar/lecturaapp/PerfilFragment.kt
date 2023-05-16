@@ -87,15 +87,21 @@ class PerfilFragment : Fragment() {
         val userRef = database.child("users").child(uid.toString())
         userRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    val name = dataSnapshot.child("name").getValue(String::class.java)
-                    val imageName = dataSnapshot.child("imageName").getValue(String::class.java)
-                    val resId = resources.getIdentifier(imageName, "drawable", requireContext().packageName)
-                    nameUser?.setCompoundDrawablesWithIntrinsicBounds(0, resId, 0, 0)
-                    Log.d("PerfilFragment", "Nombre del usuario: $name")
-                    nameUser?.text = name
-                    if (imageName == "img_avatar_uno") {
-                        nameUser?.setBackgroundResource(R.drawable.gradient_btn_profile2)
+                if (isAdded && context != null) {
+                    if (dataSnapshot.exists()) {
+                        val name = dataSnapshot.child("name").getValue(String::class.java)
+                        val imageName = dataSnapshot.child("imageName").getValue(String::class.java)
+                        val resId = resources.getIdentifier(
+                            imageName,
+                            "drawable",
+                            requireContext().packageName
+                        )
+                        nameUser?.setCompoundDrawablesWithIntrinsicBounds(0, resId, 0, 0)
+                        Log.d("PerfilFragment", "Nombre del usuario: $name")
+                        nameUser?.text = name
+                        if (imageName == "img_avatar_uno") {
+                            nameUser?.setBackgroundResource(R.drawable.gradient_btn_profile2)
+                        }
                     }
                 }
             }

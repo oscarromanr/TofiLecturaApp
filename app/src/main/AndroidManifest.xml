@@ -45,6 +45,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".CategoriaLibros"
+            android:exported="false" />
+        <activity
             android:name=".LibroDetail"
             android:exported="false" />
     </application>

@@ -3,9 +3,8 @@ package roman.oscar.lecturaapp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +15,7 @@ import android.widget.EditText
 import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
+import com.google.firebase.database.FirebaseDatabase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +35,6 @@ class Buscar : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         currentState = savedInstanceState
-        cargarCategorias()
     }
 
     override fun onCreateView(
@@ -49,8 +48,8 @@ class Buscar : Fragment() {
         adapter = CategoriaAdapter(requireContext(), categorias)
         gridCategorias.adapter = adapter
         val editTextBuscar: EditText = view.findViewById(R.id.editTextBuscar)
-        editTextBuscar.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
+        editTextBuscar.setOnEditorActionListener { _, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE || event?.keyCode == KeyEvent.KEYCODE_ENTER) {
                 // Realiza alguna acción aquí cuando se presiona "Enter"
                 Log.d("EditText", "El usuario busco algo")
                 val intento = Intent(context, LibrosBuscados::class.java)
@@ -65,41 +64,14 @@ class Buscar : Fragment() {
     }
 
     private fun cargarCategorias() {
-        val categorias1 = arrayListOf("Ficción", "Popular", "Amistad","Novela","Arte","Escolar")
-        categorias.clear()
-        var libros1 = ArrayList<Libro>()
-        libros1.add(
-            Libro(
-                "Click",
-                "https://i.imgur.com/Ij6RZyf.jpg",
-                "Kayla Miller",
-                192,
-                " La historia se centra en un pequeño príncipe que realiza una travesía por el universo. En este viaje descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.",
-                categorias1
-            )
-        )
-        libros1.add(
-            Libro(
-                "El principito",
-                "https://imagessl2.casadellibro.com/a/l/t5/92/9788419087492.jpg",
-                "Antoine de Saint-Exupéry",
-                300,
-                " La historia se centra en un pequeño príncipe que realiza una travesía por el universo. En este viaje descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad.",
-                categorias1
-            )
-        )
-        libros1.add(
-            Libro(
-                "El pibe motosierra",
-                "https://m.media-amazon.com/images/I/81zijlool9L.jpg",
-                "Un chico japones",
-                145,
-                " La historia trata sobre un pibe que de repente se puede transformar en motosierra.",
-                categorias1
-            )
+        categorias.add(
+            Categoria("Ficción", null, R.drawable.ficcion)
         )
         categorias.add(
-            Categoria("Ficción", libros1, R.drawable.ficcion)
+            Categoria("Comedia", null, R.drawable.imagen_libro3)
+        )
+        categorias.add(
+            Categoria("Amistad", null, R.drawable.imagen_libro1)
         )
     }
 
@@ -124,11 +96,15 @@ class Buscar : Fragment() {
             val inflater = LayoutInflater.from(context)
             val view = inflater.inflate(R.layout.cell_categoria_buscar, null)
             val image: ImageView = view.findViewById(R.id.image_libro_cell)
+            val text: TextView = view.findViewById(R.id.nombre_categoria)
+            Log.d("Variable categoria", "Variable categoria: $categoria")
+            Log.d("Categorías obtenidas", "Categorias obtenidas: $categorias")
+            text.setText(categoria.nombre)
             image.setImageResource(categoria.image)
             image.setOnClickListener {
                 val intento = Intent(context, CategoriaLibros::class.java)
                 intento.putExtra("nombre", categoria.nombre)
-                intento.putExtra("libros", categoria.libros)
+                Log.d("Nombre que envia", "Nombre que envia: ${categoria.nombre}")
                 context.startActivity(intento)
             }
             return view
